@@ -1,0 +1,36 @@
+---
+title: "Rreview_DTB"
+author: "Daniel Bun"
+format: html
+editor: visual
+---
+
+## Part 1
+
+I was unable to read the files as they did not exist in this repository. I recommend the fix below, so the file can be read directly from github instead of needing a local copy!
+
+```{r}
+genotypes <- read_table("https://raw.githubusercontent.com/EEOB-BioData/BCB546_Spring2024/main/assignments/UNIX_Assignment/fang_et_al_genotypes.txt")
+
+snp_positions <- read_table("https://raw.githubusercontent.com/EEOB-BioData/BCB546_Spring2024/main/assignments/UNIX_Assignment/snp_position.txt")
+```
+
+The first part is fine as is, but you could benefit from a faster/less computer intensive way to inspect the file such as "ncol()" or "nrow()" functions. It would make it easier for a reviewer to read the information. You can also comment out opening of the files as I do not need to see them would be nice overall.
+
+Second codeblock seems fine, but I do not think you needed to print out the transposed and joined as txt files as they can be kept as dataframes. It would cut down intermediate files.
+
+Important note!!!!: Please cut out only the columns you need from the SNP file before joining!!!
+
+Also for decreasing, you need to replace '?/?' with '-/-'. Maybe try gsub command or " df\[df == 'old'\] \<- 'new' "
+
+I learned how to make the files without a forloop, thank you! Very neat code.
+
+## Part 2
+
+However the graph for maize looks great. I appreciate the data labels!
+
+Wow, the across chromosome distribution (all of your graphs are great!) is beautiful. Not sure why there are NAs being added as a warning, but should be ok....
+
+Maybe add more comments for the visualization section?
+
+Overall: The visualization part is wonderful to look at, great job! I added some comments that could improve part 1. Thank you for sharing your code!
